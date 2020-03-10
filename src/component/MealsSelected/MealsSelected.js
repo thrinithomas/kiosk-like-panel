@@ -7,6 +7,10 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import WeekdaySelected from '../MealsSelected/WeekdaySelected/WeekdaySelected'
 
+import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
+import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
+
 const userStyles = makeStyles(theme => ({
     root: {
         width: '100%',
@@ -22,33 +26,6 @@ const userStyles = makeStyles(theme => ({
     },
 }));
 
-const meal_menu = {
-    'monday': {
-        lunch: {A: 'Mon A', B: 'Mon B', C: 'Mon C', soup: 'Mon S'},
-        dinner: {A: 'Mon DA', B: 'Mon DB', C: 'Mon DC', soup: 'Mon DS'}
-    },
-    'tuesday': {
-        lunch: {A: 'Tue A', B: 'Tue B', C: 'Tue C', soup: 'Tue S'},
-        dinner: {A: 'Tue DA', B: 'Tue DB', C: 'Tue DC', soup: 'Tue DS'}
-    },
-    'wednesday': {
-        lunch: {A: 'Mon A', B: 'Mon B', C: 'Mon C', soup: 'Mon S'},
-        dinner: {A: 'Mon DA', B: 'Mon DB', C: 'Mon DC', soup: 'Mon DS'}
-    },
-    'thursday': {
-        lunch: {A: 'Tue A', B: 'Tue B', C: 'Tue C', soup: 'Tue S'},
-        dinner: {A: 'Tue DA', B: 'Tue DB', C: 'Tue DC', soup: 'Tue DS'}
-    },
-    'friday': {
-        lunch: {A: 'Mon A', B: 'Mon B', C: 'Mon C', soup: 'Mon S'},
-        dinner: {A: 'Mon DA', B: 'Mon DB', C: 'Mon DC', soup: 'Mon DS'}
-    },
-    'saturday': {
-        lunch: {A: 'Tue A', B: 'Tue B', C: 'Tue C', soup: 'Tue S'},
-        dinner: {A: 'Tue DA', B: 'Tue DB', C: 'Tue DC', soup: 'Tue DS'}
-    }
-};
-
 
 const MealsSelected = (props) => {
     const classes = userStyles();
@@ -56,7 +33,7 @@ const MealsSelected = (props) => {
     const handleChange = panel => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
-    console.log(props.meals);
+    // console.log(props.meals);
     return (
 
         Object.keys(props.meals).map((weekDay, index) => {
@@ -68,14 +45,20 @@ const MealsSelected = (props) => {
                                                    id="panel1bh-header">
                                 <Typography className={classes.heading}>27／2 - {weekDay}</Typography>
                                 <Typography className={classes.secondaryHeading}>
-                                    午餐: {props.meals[weekDay].lunch}<br/>
-                                    晚餐: {props.meals[weekDay].dinner}</Typography>
+                                    午餐: {props.meals[weekDay].lunch == null ? null : props.meals[weekDay].lunch + (props.menu[weekDay].lunch_soup === undefined ? '' : ' + ' + props.menu[weekDay].lunch_soup)}<br/>
+                                    晚餐: {props.meals[weekDay].dinner == null ? null : props.meals[weekDay].dinner + (props.menu[weekDay].dinner_soup === undefined ? '' : ' + ' + props.menu[weekDay].dinner_soup)}
+                                </Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                                 <Typography>
-                                    <WeekdaySelected menu={meal_menu[weekDay]} selectedHandler={props.handleSelected}/>
+                                    <WeekdaySelected meals={props.meals[weekDay]} menu={props.menu[weekDay]} selectedHandler={props.handleSelected}
+                                                     weekday={weekDay}/>
                                 </Typography>
                             </ExpansionPanelDetails>
+                            <Divider/>
+                            <ExpansionPanelActions>
+                                <Button onClick={() => props.cancelClicked(weekDay)}  size="medium" variant="contained" color="secondary">取消/重新簡過</Button>
+                            </ExpansionPanelActions>
                         </ExpansionPanel>
                     </div>);
             }

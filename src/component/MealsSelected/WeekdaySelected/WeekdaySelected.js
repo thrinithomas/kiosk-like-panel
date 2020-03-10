@@ -14,19 +14,49 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const WeekdaySelected = (props) => {
-    console.log(props.menu);
+    console.log(props.menu, props.meals);
 
     const classes = useStyles();
-    const [value, setValue] = React.useState('female');
+    const [value, setValue] = React.useState(false);
 
 
     return (
-        <FormControl component="fieldset" className={classes.formControl}>
-            <FormLabel component="legend">Gender</FormLabel>
-            <RadioGroup aria-label="gender" name="gender1" value={value} onChange={props.selectedHandler}>
+        <React.Fragment>
+            <FormControl component="fieldset" className={classes.formControl}>
+                <FormLabel component="legend">午餐</FormLabel>
+                <RadioGroup aria-label="lunch" name="lunch">
+                    {Object.keys(props.menu.lunch).map((item, index) => {
+                        return <FormControlLabel
+                            // key={props.menu.lunch[item] + index}
+                            checked={props.meals.lunch === props.menu.lunch[item]}
+                            onChange={() => props.selectedHandler(props.weekday, 'lunch', props.menu.lunch[item])}
+                            value={props.menu.lunch[item]}
+                            control={<Radio color="primary"/>}
+                            label={props.menu.lunch[item]}
 
-            </RadioGroup>
-        </FormControl>
+                        />
+                    })}
+                </RadioGroup>
+                {props.menu.lunch_soup}
+            </FormControl>
+
+            <FormControl component="fieldset" className={classes.formControl}>
+                <FormLabel component="legend">晚餐</FormLabel>
+                <RadioGroup aria-label="dinner" name="dinner">
+                    {Object.keys(props.menu.dinner).map((item, index) => {
+                        return <FormControlLabel
+                            checked={props.meals.dinner === props.menu.dinner[item]}
+                            onChange={() => props.selectedHandler(props.weekday, 'dinner', props.menu.dinner[item])}
+                            value={props.menu.dinner[item]}
+                            control={<Radio color="primary"/>}
+                            label={props.menu.dinner[item]}
+
+                        />
+                    })}
+                </RadioGroup>
+                {props.menu.dinner_soup}
+            </FormControl>
+        </React.Fragment>
     );
 };
 
