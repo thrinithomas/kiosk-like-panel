@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "93e0471a20945b98e40d44543a262e2a",
+    "revision": "a25aa4b05147b750b7141541e0ac8b07",
     "url": "/kiosk-like-panel/index.html"
   },
   {
-    "revision": "65c19b3780913292f3f5",
+    "revision": "def5d3a0a0b87cd2a34c",
     "url": "/kiosk-like-panel/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kiosk-like-panel/static/js/2.ca4adaa2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "65c19b3780913292f3f5",
-    "url": "/kiosk-like-panel/static/js/main.27240b44.chunk.js"
+    "revision": "def5d3a0a0b87cd2a34c",
+    "url": "/kiosk-like-panel/static/js/main.8f02dc93.chunk.js"
   },
   {
     "revision": "dd6ccabd244f9d5806c6",
