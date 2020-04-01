@@ -1,68 +1,102 @@
-import React, {useState} from "react";
+import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import WeekdaySelected from '../MealsSelected/WeekdaySelected/WeekdaySelected'
-
-import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions';
-import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
+import {Step, StepButton, Stepper} from '@material-ui/core';
+import WeekdaySelected from "./WeekdaySelected/WeekdaySelected";
 
 const userStyles = makeStyles(theme => ({
     root: {
         width: '100%',
     },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        flexBasis: '33.33%',
-        flexShrink: 0,
+    button: {
+        marginRight: theme.spacing(1)
     },
-    secondaryHeading: {
-        fontSize: theme.typography.pxToRem(15),
-        color: theme.palette.text.secondary,
+    completed: {
+        display: 'inline-block',
     },
 }));
 
+// This key value pair for converse English weekday to Chinese weekday in meal_menu, MealBuilder
+const chineseWeekKeyPair = {
+    'monday': '星期一',
+    'tuesday': '星期二',
+    'wednesday': '星期三',
+    'thursday': '星期四',
+    'friday': '星期五',
+    'saturday': '星期六',
+};
 
 const MealsSelected = (props) => {
     const classes = userStyles();
-    const [expanded, setExpanded] = React.useState(false);
-    const handleChange = panel => (event, isExpanded) => {
-        setExpanded(isExpanded ? panel : false);
-    };
-    // console.log(props.meals);
-    return (
+    const [activeStep, setActiveStep] = React.useState(0);
+    const [completed, setCompleted] = React.useState(new Set());
 
-        Object.keys(props.meals).map((weekDay, index) => {
-                return (
-                    <div className={classes.root} key={'panel' + weekDay}>
-                        <ExpansionPanel expanded={expanded === 'panel' + weekDay}
-                                        onChange={handleChange('panel' + weekDay)}>
-                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} aria-controls="panel1bh-content"
-                                                   id="panel1bh-header">
-                                <Typography className={classes.heading}>27／2 - {weekDay}</Typography>
-                                <Typography className={classes.secondaryHeading}>
-                                    午餐: {props.meals[weekDay].lunch == null ? null : props.meals[weekDay].lunch + (props.menu[weekDay].lunch_soup === undefined ? '' : ' + ' + props.menu[weekDay].lunch_soup)}<br/>
-                                    晚餐: {props.meals[weekDay].dinner == null ? null : props.meals[weekDay].dinner + (props.menu[weekDay].dinner_soup === undefined ? '' : ' + ' + props.menu[weekDay].dinner_soup)}
-                                </Typography>
-                            </ExpansionPanelSummary>
-                            <ExpansionPanelDetails>
-                                <Typography>
-                                    <WeekdaySelected meals={props.meals[weekDay]} menu={props.menu[weekDay]} selectedHandler={props.handleSelected}
-                                                     weekday={weekDay}/>
-                                </Typography>
-                            </ExpansionPanelDetails>
-                            <Divider/>
-                            <ExpansionPanelActions>
-                                <Button onClick={() => props.cancelClicked(weekDay)}  size="medium" variant="contained" color="secondary">取消/重新簡過</Button>
-                            </ExpansionPanelActions>
-                        </ExpansionPanel>
-                    </div>);
-            }
-        ));
+    // For step button click
+    const handleStep = (step) => {
+        setActiveStep(step);
+    };
+
+    // For reset full form
+    const handleReset = () => {
+        setActiveStep(0);
+        setCompleted({});
+    };
+
+    // For handle confirm button click
+    const handleCompleted = () => {
+        const newCompleted = new Set(completed);
+        newCompleted.add(activeStep);
+        setCompleted(newCompleted);
+        // Handle Next?
+        handleNext()
+    };
+
+    const isCompleted = (step) => {
+        return completed.has(step);
+    };
+
+    // Change current step to next step
+    const handleNext = () => {
+        console.log('To be done');
+    };
+
+    const handleCancelled = () => {
+        const newCompleted = new Set(completed);
+        newCompleted.delete(activeStep);
+        setCompleted(newCompleted);
+    };
+
+    // CAUTION: BrowserRouter should put in upper level,
+    // full url should be:
+    // www.ct-catering.com.hk/{UUID of user}/menu/{UUID of weekly menu}?weekday=wednesday
+    // The query part is being used by WeekdaySelected component
+
+    // console.log(props.meals, props.menu);
+
+    return (
+        <div className={classes.Root}>
+            <Stepper alternativeLabel nonLinear activeStep={activeStep}>
+                {props.menu.map((item, index) => {
+
+                    return (
+                        <Step key={'step_' + index}>
+                            <StepButton onClick={() => handleStep(index)} completed={isCompleted(index)}>
+                                {/*<NavLink to={'/menu/' + index + '?weekday=' + label}>*/}
+                                {chineseWeekKeyPair[item.weekday]}
+                            </StepButton>
+
+                        </Step>
+                    );
+                })}
+            </Stepper>
+
+            <WeekdaySelected menu={props.menu[activeStep]} meals={props.meals[activeStep]}
+                             selectedHandler={props.handleSelected}
+                             completedHandler={handleCompleted} // Handler Completed UI state
+                             cancelHandler={handleCancelled} // Handler Completed cancel UI state
+                             cancelClicked={props.cancelClicked}/>
+
+        </div>
+    );
 };
 
 export default MealsSelected;
