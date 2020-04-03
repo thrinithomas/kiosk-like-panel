@@ -166,7 +166,7 @@ class MealBuilders extends Component {
                             <Grid container justify="space-between" spacing={16}>
                                 <Grid style={{"margin": "15px"}} item>
                                     <Typography type="title" color="inherit">
-                                        3月23日 至 3月27日
+                                        3月23日 至 3月27日 會員：李樹仁
                                     </Typography>
                                 </Grid>
                                 <Grid style={{"margin": "15px"}} item>
