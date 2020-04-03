@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kiosk-like-panel/precache-manifest.72ae209e50b30d6f5bdbcde6d0c8a432.js"
+  "/kiosk-like-panel/precache-manifest.1893f6c3ce9e8752b6080cce9c52ce03.js"
 );
 
 self.addEventListener('message', (event) => {
