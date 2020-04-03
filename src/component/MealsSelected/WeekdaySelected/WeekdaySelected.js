@@ -99,7 +99,7 @@ const WeekdaySelected = (props) => {
                     props.cancelHandler();
                 }} className={clsx(classes.expand)}
                         aria-label="submit" variant="contained"
-                        color="secondary">取消/重新簡過</Button>
+                        color="secondary">取消/重新選取</Button>
 
             </CardActions>
         </Card>
