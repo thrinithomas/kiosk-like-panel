@@ -162,7 +162,7 @@ class MealBuilders extends Component {
                     <CssBaseline/>
 
                     <Grid container spacing={1}>
-                        <Grid item xs={12} sm={9} spacing={3}>
+                        <Grid item xs={12} lg={8} spacing={3}>
                             <Grid container justify="space-between" spacing={16}>
                                 <Grid style={{"margin": "15px"}} item>
                                     <Typography type="title" color="inherit">
@@ -199,7 +199,7 @@ class MealBuilders extends Component {
                                           handleSelected={this.handleSelected}
                                           cancelClicked={this.cancelClicked}/>
                         </Grid>
-                        <Grid ref={this.orderSumRef} item xs={12} sm={3}>
+                        <Grid ref={this.orderSumRef} item xs={12}  lg={4}>
                             <OrderSummary  meals={this.state.meals} menu={meal_menu}
                                           totalPrice={this.state.totalPrice}/>
                         </Grid>

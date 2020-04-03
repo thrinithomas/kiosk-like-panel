@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02e539d5-4ab2-4dca-acb3-475761856db1" name="Default Changelist" comment="enh/Stepper: Modify field label">
+    <list default="true" id="02e539d5-4ab2-4dca-acb3-475761856db1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/OrderSummary/OrderSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/OrderSummary/OrderSummary.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/MealBuilders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/MealBuilders.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +118,7 @@
       <workItem from="1583824457502" duration="15906000" />
       <workItem from="1583847368501" duration="11940000" />
       <workItem from="1585707660238" duration="25249000" />
-      <workItem from="1585880509719" duration="443000" />
+      <workItem from="1585880509719" duration="1383000" />
     </task>
     <task id="LOCAL-00001" summary="enh/Stepper: Modify field label">
       <created>1585880773966</created>
@@ -128,31 +127,54 @@
       <option name="project" value="LOCAL" />
       <updated>1585880773966</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="enh/Stepper: Hard-code name label in MealBuilders.js">
+      <created>1585881020209</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585881020209</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="enh/Stepper: Modify field label" />
-    <option name="LAST_COMMIT_MESSAGE" value="enh/Stepper: Modify field label" />
+    <MESSAGE value="enh/Stepper: Modify field label in OrderSummary.js and BurgerBuilder.js" />
+    <MESSAGE value="enh/Stepper: Hard-code name label in MealBuilders.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="enh/Stepper: Hard-code name label in MealBuilders.js" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585880849757">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585880849757" />
-    <state x="286" y="25" key="CommitChangelistDialog2" timestamp="1585880938822">
+    <state x="416" y="23" key="CommitChangelistDialog2" timestamp="1585881019937">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="286" y="25" key="CommitChangelistDialog2/1440.69.1280.697/0.23.1440.803@0.23.1440.803" timestamp="1583837651525" />
-    <state x="286" y="25" key="CommitChangelistDialog2/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585880938822" />
+    <state x="416" y="23" key="CommitChangelistDialog2/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585881019937" />
+    <state x="555" y="333" key="GitRewordDialog" timestamp="1585881061431">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="555" y="333" key="GitRewordDialog/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585881061431" />
     <state x="578" y="323" key="Github.ShareDialog" timestamp="1583843012309">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="578" y="323" key="Github.ShareDialog/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1583843012309" />
-    <state width="699" height="290" key="GridCell.Tab.0.bottom" timestamp="1585880853844">
+    <state width="699" height="290" key="GridCell.Tab.0.bottom" timestamp="1585881744041">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="914" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585736693502" />
@@ -164,8 +186,8 @@
     <state width="1398" height="205" key="GridCell.Tab.0.bottom/1440.69.1280.697/0.23.1440.803@0.23.1440.803" timestamp="1583837236602" />
     <state width="1398" height="205" key="GridCell.Tab.0.bottom/1440.69.1280.697/0.23.1440.805@0.23.1440.805" timestamp="1583835622287" />
     <state width="1398" height="205" key="GridCell.Tab.0.bottom/1440.69.1280.697/0.23.1440.807@0.23.1440.807" timestamp="1583834227618" />
-    <state width="699" height="290" key="GridCell.Tab.0.bottom/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585880853844" />
-    <state width="699" height="290" key="GridCell.Tab.0.center" timestamp="1585880853843">
+    <state width="699" height="290" key="GridCell.Tab.0.bottom/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585881744041" />
+    <state width="699" height="290" key="GridCell.Tab.0.center" timestamp="1585881744041">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="914" height="283" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585736693502" />
@@ -177,8 +199,8 @@
     <state width="1398" height="205" key="GridCell.Tab.0.center/1440.69.1280.697/0.23.1440.803@0.23.1440.803" timestamp="1583837236600" />
     <state width="1398" height="205" key="GridCell.Tab.0.center/1440.69.1280.697/0.23.1440.805@0.23.1440.805" timestamp="1583835622286" />
     <state width="1398" height="205" key="GridCell.Tab.0.center/1440.69.1280.697/0.23.1440.807@0.23.1440.807" timestamp="1583834227616" />
-    <state width="699" height="290" key="GridCell.Tab.0.center/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585880853843" />
-    <state width="699" height="290" key="GridCell.Tab.0.left" timestamp="1585880853842">
+    <state width="699" height="290" key="GridCell.Tab.0.center/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585881744041" />
+    <state width="699" height="290" key="GridCell.Tab.0.left" timestamp="1585881744040">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="914" height="283" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585736693502" />
@@ -190,8 +212,8 @@
     <state width="1398" height="205" key="GridCell.Tab.0.left/1440.69.1280.697/0.23.1440.803@0.23.1440.803" timestamp="1583837236599" />
     <state width="1398" height="205" key="GridCell.Tab.0.left/1440.69.1280.697/0.23.1440.805@0.23.1440.805" timestamp="1583835622283" />
     <state width="1398" height="205" key="GridCell.Tab.0.left/1440.69.1280.697/0.23.1440.807@0.23.1440.807" timestamp="1583834227615" />
-    <state width="699" height="290" key="GridCell.Tab.0.left/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585880853842" />
-    <state width="699" height="290" key="GridCell.Tab.0.right" timestamp="1585880853844">
+    <state width="699" height="290" key="GridCell.Tab.0.left/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585881744040" />
+    <state width="699" height="290" key="GridCell.Tab.0.right" timestamp="1585881744041">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="914" height="283" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585736693502" />
@@ -203,11 +225,11 @@
     <state width="1398" height="205" key="GridCell.Tab.0.right/1440.69.1280.697/0.23.1440.803@0.23.1440.803" timestamp="1583837236601" />
     <state width="1398" height="205" key="GridCell.Tab.0.right/1440.69.1280.697/0.23.1440.805@0.23.1440.805" timestamp="1583835622287" />
     <state width="1398" height="205" key="GridCell.Tab.0.right/1440.69.1280.697/0.23.1440.807@0.23.1440.807" timestamp="1583834227617" />
-    <state width="699" height="290" key="GridCell.Tab.0.right/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585880853844" />
-    <state x="320" y="163" key="Vcs.Push.Dialog.v2" timestamp="1583842998181">
+    <state width="699" height="290" key="GridCell.Tab.0.right/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585881744041" />
+    <state x="320" y="163" key="Vcs.Push.Dialog.v2" timestamp="1585881073364">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="163" key="Vcs.Push.Dialog.v2/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1583842998181" />
+    <state x="320" y="163" key="Vcs.Push.Dialog.v2/1440.69.1280.697/0.23.1440.877@0.23.1440.877" timestamp="1585881073364" />
     <state x="377" y="108" key="refactoring.ChangeSignatureDialog" timestamp="1583832533773">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
